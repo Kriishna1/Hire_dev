@@ -13,7 +13,7 @@ export const Meeting = () => {
   useEffect(() => {
     const fetchMeeting = async () => {
       try {
-        const response = await fetch(`${process.env.BACKEND_API_URL}/api/meetings/${meetingId}`,{
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/api/meetings/${meetingId}`,{
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

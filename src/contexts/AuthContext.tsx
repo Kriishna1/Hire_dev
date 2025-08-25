@@ -44,7 +44,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const API_URL = `${process.env.BACKEND_API_URL}`;
+const API_URL = `${import.meta.env.VITE_BACKEND_API_URL}`;
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
@@ -90,7 +90,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkWalletAuth = async (address: string): Promise<User | null> => {
     try {
-      const response = await fetch(`https://hire-dev-backend.vercel.app/api/auth/wallet/check`, {
+      const response = await fetch(`${API_URL}/api/auth/wallet/check`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

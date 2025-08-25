@@ -60,7 +60,7 @@ export const MeetingRoom: React.FC<MeetingRoomProps> = ({
         setIsLoading(true);
         // First check if meeting exists
         const checkResponse = await fetch(
-          `${process.env.BACKEND_API_URL}/api/meetings/booking/${bookingId}`,
+          `${import.meta.env.VITE_BACKEND_API_URL}/api/meetings/booking/${bookingId}`,
           {
             method: 'GET',
             headers: {
@@ -78,7 +78,7 @@ export const MeetingRoom: React.FC<MeetingRoomProps> = ({
           const formattedDateTime = formatDateTime(startDate, startTime);
 
           const response = await fetch(
-            `${process.env.BACKEND_API_URL}/api/meetings`,
+            `${import.meta.env.VITE_BACKEND_API_URL}/api/meetings`,
             {
               method: 'POST',
               headers: {
@@ -90,7 +90,7 @@ export const MeetingRoom: React.FC<MeetingRoomProps> = ({
                 startTime: formattedDateTime,
                 duration,
                 createdBy: user?._id,
-                meetingUrl: `${process.env.VIDEO_CHAT_URL}/room/${bookingId}`,
+                meetingUrl: `${import.meta.env.VITE_VIDEO_CHAT_URL}/room/${bookingId}`,
                 participants: [
                   {
                     userId: user?._id,

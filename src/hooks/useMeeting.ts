@@ -16,7 +16,7 @@ export const useMeeting = (bookingId: string) => {
   useEffect(() => {
     const fetchMeeting = async () => {
       try {
-        const response = await fetch(`${process.env.BACKEND_API_URL}/meetings/${bookingId}`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/meetings/${bookingId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export const useMeeting = (bookingId: string) => {
 
   const joinMeeting = async () => {
     try {
-      await fetch(`${process.env.BACKEND_API_URL}/api/meetings/${bookingId}/join`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/api/meetings/${bookingId}/join`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export const useMeeting = (bookingId: string) => {
 
   const endMeeting = async () => {
     try {
-      await fetch(`${process.env.BACKEND_API_URL}/api/meetings/${bookingId}/end`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/api/meetings/${bookingId}/end`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

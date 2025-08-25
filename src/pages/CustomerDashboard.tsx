@@ -73,7 +73,7 @@ export const CustomerDashboard = () => {
         const data = await getProfile();
 
         const response = await fetch(
-          `${process.env.BACKEND_API_URL}/api/meetings/${data._id}/upcoming`,{
+          `${import.meta.env.VITE_BACKEND_API_URL}/api/meetings/${data._id}/upcoming`,{
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
