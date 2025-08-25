@@ -90,7 +90,7 @@ export const MeetingRoom: React.FC<MeetingRoomProps> = ({
                 startTime: formattedDateTime,
                 duration,
                 createdBy: user?._id,
-                meetingUrl: `https://video-call-app-uamc.vercel.app/room/${bookingId}`,
+                meetingUrl: `${process.env.VIDEO_CHAT_URL}/room/${bookingId}`,
                 participants: [
                   {
                     userId: user?._id,
