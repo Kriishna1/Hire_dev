@@ -5,8 +5,7 @@
       "src": "index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["backend/**"],
-        "nodeVersion": "18.x"
+        "includeFiles": ["backend/**"]
       }
     }
   ],
