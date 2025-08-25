@@ -90,7 +90,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkWalletAuth = async (address: string): Promise<User | null> => {
     try {
-      const response = await fetch(`${API_URL}/api/auth/wallet/check`, {
+      const response = await fetch(`https://hire-dev-backend.vercel.app/api/auth/wallet/check`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
