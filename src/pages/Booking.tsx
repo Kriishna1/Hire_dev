@@ -56,7 +56,7 @@ export const Booking = () => {
     const fetchDeveloper = async () => {
       try {
         const response = await fetch(
-          `https://synergy-hub.onrender.com/api/users/developers/${developerId}`,{
+          `${process.env.BACKEND_API_URL}/api/users/developers/${developerId}`,{
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ export const Booking = () => {
       setIsProcessingBooking(true);
       setShowPayment(false);
 
-      const response = await fetch('https://synergy-hub.onrender.com/api/bookings', {
+      const response = await fetch(`${process.env.BACKEND_API_URL}/api/bookings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

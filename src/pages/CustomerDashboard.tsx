@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Video,
-  Clock,
-  DollarSign,
-  Calendar,
-  Star,
-  Bell,
-  MessageSquare,
-  ArrowUpRight,
-  Timer,
-  Shield,
-  Users,
-  Filter,
-  ChevronRight,
-  CheckCircle2,
-  AlertCircle,
-  Wallet,
-} from 'lucide-react';
-import { useAuth } from '../contexts/AuthContext';
-import { MeetingModal } from '../components/MeetingModal';
-import { Link } from 'react-router-dom';
 import { ethers } from 'ethers';
+import { motion } from 'framer-motion';
+import {
+  ArrowUpRight,
+  Bell,
+  Calendar,
+  Clock,
+  Filter,
+  Timer,
+  Users,
+  Video
+} from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { MeetingModal } from '../components/MeetingModal';
+import { useAuth } from '../contexts/AuthContext';
 import { useWeb3 } from '../contexts/Web3Context';
 
 export const CustomerDashboard = () => {
@@ -81,7 +73,7 @@ export const CustomerDashboard = () => {
         const data = await getProfile();
 
         const response = await fetch(
-          `https://synergy-hub.onrender.com/api/meetings/${data._id}/upcoming`,{
+          `${process.env.BACKEND_API_URL}/api/meetings/${data._id}/upcoming`,{
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',

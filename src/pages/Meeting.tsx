@@ -13,7 +13,7 @@ export const Meeting = () => {
   useEffect(() => {
     const fetchMeeting = async () => {
       try {
-        const response = await fetch(`https://synergy-hub.onrender.com/api/meetings/${meetingId}`,{
+        const response = await fetch(`${process.env.BACKEND_API_URL}/api/meetings/${meetingId}`,{
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
