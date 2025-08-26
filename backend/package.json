@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Backend for Hire_dev platform",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
